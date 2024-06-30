@@ -1,0 +1,132 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+<style>
+    body {
+        background: url('data:image/jpeg;base64,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') center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+    }
+
+    hr {
+        border: none;
+        border-top: 2px solid #201f1f;
+        margin: 0 2rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+
+    form div textarea {
+        font-weight: 500;
+        font-size: 1rem;
+        overflow-y: scroll;
+        width: 70vw;
+        color: rgb(252, 250, 250);
+        padding: 2rem;
+        background-color: #1c1d1b;
+        height: 70vh;
+        resize: none;
+        box-sizing: border-box;
+        border-radius: 2rem;
+        border: 2px solid rgb(211, 186, 186);
+    }
+    form div textarea::placeholder{
+        color: white;
+        font-size: medium;
+    }
+
+    a,button {
+        background-color: #3366cc;
+        color: #fff;
+        width: 5rem;
+        border: none;
+        margin: 1rem;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    form button:hover {
+        background-color: #27408b;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    /* a button {
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #333;
+        } */
+
+    a:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .btns {
+        /* padding: rem; */
+        display: flex;
+        justify-content: space-between;
+        display: inline;
+    }
+
+    .text {
+        padding: 1rem;
+
+    }
+
+    @media screen and (max-width: 600px) {
+        body {
+            font-size: 14px;
+        }
+
+        form div textarea {
+            padding: 1rem;
+            font-size: 0.8rem;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+    <center>
+        <h1>Coded pad</h1>
+        <hr>
+        <form action="/final" method="POST">
+
+            {% if data=="" %}
+            <div class="text">
+                <textarea name="data" placeholder="Enter some data " class="data"></textarea>
+
+            </div>
+            {% else %}
+
+            <div class="text">
+                <textarea name="data" placeholder="Enter some data " class="data">{{ data }}</textarea>
+
+            </div>
+            {% endif %}
+            <div class="btns">
+                <a href="/" >Back </a>
+                <button type="submit">Save</button>
+            </div>
+
+
+        </form>
+
+    </center>
+
+    {% endblock %}

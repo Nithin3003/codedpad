@@ -1,0 +1,67 @@
+{% extends 'layout.html'%}
+{% block content %}
+<style>
+    body{
+        background: conic-gradient(rgb(3, 233, 214), rgb(104, 93, 255), rgb(187, 240, 250), rgb(242, 242, 247), rgb(35, 245, 164));
+        align-content: center;
+        justify-content: center;
+        
+    }
+    .card {
+  width: 80%;
+  padding: 1rem;
+  height: 20%;
+  color:azure;
+  border-radius: 1rem;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #1888b4 46%,
+    #0f31ca 100%
+  );
+  transition: .9s ease all;
+    box-shadow: black 5px 5px 10px;
+}
+.card:hover{
+    box-shadow: rgba(165, 163, 163, 0.17) 0px -23px 25px 0px inset,
+      rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+      rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+      rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    
+}
+button {
+    background-color: #3366cc;
+    color: #fff;
+    width: 5rem;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+    button:hover {
+        box-shadow: black 5px 5px 10px;
+        background-color: #27408b;
+    }
+</style>
+<body>
+    
+
+    {% if change %}
+    <div class="card">
+        <h1>Succefully saved changes/no change made . </h1>
+        
+    </div>
+    {% else %}
+    <div class="card">
+        <h1>New data saved !....</h1>
+    </div>
+    {% endif %}
+   <br><br>
+    <a href="/"><button> Go back </button></a>
+</body>
+
+{% endblock %}
