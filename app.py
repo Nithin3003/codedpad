@@ -2,26 +2,9 @@ from flask_pymongo import PyMongo
 from flask import Flask,redirect,url_for,render_template,request,session
 # from werkzeug.security import generate_password_hash, check_password_hash
 import csv 
-from honeybadger.contrib import FlaskHoneybadger
 from secrets import token_urlsafe
-import sentry_sdk
 app= Flask(__name__) 
 
-app.config['HONEYBADGER_ENVIRONMENT'] = 'production'
-app.config['HONEYBADGER_API_KEY'] = 'hbp_LMh8bGBwn0ZETZqFOOPmiolHiMvCE32QAWLB'
-app.config['HONEYBADGER_PARAMS_FILTERS'] = 'password, secret, credit-card'
-FlaskHoneybadger(app, report_exceptions=True)
-
-sentry_sdk.init(
-    dsn="https://13bd238b3f4427f4a06d51184f4c6c2f@o4507514206486528.ingest.de.sentry.io/4507514211074128",
-    # Set traces_sample_rate to 1.0 to capture 100%
-    # of transactions for performance monitoring.
-    traces_sample_rate=1.0,
-    # Set profiles_sample_rate to 1.0 to profile 100%
-    # of sampled transactions.
-    # We recommend adjusting this value in production.
-    profiles_sample_rate=1.0,
-)
 
 app.config['MONGO_URI'] = "mongodb+srv://msnithin84:Nithin@cluster0.wob2cfi.mongodb.net/coded"
 app.config['SECRET_KEY'] = token_urlsafe(32)
@@ -92,5 +75,7 @@ def feedback():
     if request.method=='POST':
         # return request.form
         fb(request.form)
-        return f"<h1> Feedback Saved <u>{request.form} </u> </h1>"
+        return f"<h1> Feedback Saved <br> </h1> get <a href='/'><button> Go back </button></a>"
     return redirect('/')
+if __name__=='__main__':
+    app.run(debug=True)
