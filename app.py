@@ -75,7 +75,7 @@ def feedback():
     if request.method=='POST':
         # return request.form
         fb(request.form)
-        return f"<h1> Feedback Saved <br> </h1> get <a href='/'><button> Go back </button></a>"
+        return f"<h1> Feedback Saved <br> </h1> <br> <a href='/'><button> Go back </button></a>"
     return redirect('/')
 if __name__=='__main__':
     app.run(debug=True)
